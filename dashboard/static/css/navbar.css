@@ -1,0 +1,28 @@
+.navbar {
+    background-color: rgb(111, 33, 141);
+}
+
+.navbar-toggler-icon {
+    font-size: x-large;
+}
+
+.navbar-brand {
+    font-size: 1.8rem;
+    font-weight: 500;
+    margin-left: 1rem;
+}
+
+@media (max-width: 589px) {
+    .navbar-brand {
+        font-size: 1.0em;
+        margin-left: 0.1rem;
+    }
+    .navbar-toggler {
+        width: 3rem;
+        height: 3rem;
+    }
+    .navbar-toggler-icon {
+        width: 1.5rem;
+        height: 2rem;
+    }
+}

@@ -1,0 +1,26 @@
+body,
+html {
+    background: #e6e6e6;
+}
+.content {
+    /* margin-top: 3.5rem; */
+    padding-top: 5rem;
+    background-color: #e6e6e6;
+}
+
+.email {
+    text-decoration: none;
+    color: white;
+}
+
+.title-favorites{
+    font-weight: 600;
+    font-size: 2em;
+    color: rgb(119, 117, 117);
+}
+
+@media (max-width: 589px) {
+    .email-end {
+        font-size: 0.7em;
+    }
+}

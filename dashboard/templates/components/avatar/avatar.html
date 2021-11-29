@@ -1,0 +1,25 @@
+{% load static %}
+{% load avatar_tags %}
+
+<div class="dropdown">
+    <button class="btn" type="button" data-bs-toggle="dropdown">
+      {% if user.is_authenticated %}
+        {% avatar user class="img-circle" id="user_avatar" %}
+      {% else %}
+        <div style="background-color: rgb(199, 199, 199); width: 3.5rem; height: 3.5rem; border-radius: 50%; padding-top: 20%; " >
+          <img src="{% static 'icons/user-icon.svg' %}" alt="user-icon" style="width: 1.8rem; height: 1.8rem;">
+        </div>
+      {% endif %}
+    </button>
+    <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1" style="margin-left: -8em !important;">
+        {% if user.is_authenticated %}    
+          {% if user.is_superuser %}
+            <li><a class="dropdown-item" href="/dashboard/" target="_blank">Dashboard</a></li>
+          {% endif %}
+            <li><hr class="dropdown-divider"></li>
+            <li><a class="dropdown-item" href="/signout/">Sair</a></li>
+        {% else %}
+            <li><a class="dropdown-item" href="/signin_page/">Login</a></li>
+        {% endif %}
+    </ul>
+</div>

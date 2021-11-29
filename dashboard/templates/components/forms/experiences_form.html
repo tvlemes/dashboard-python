@@ -1,0 +1,52 @@
+<form action="/dashboard/experiences/add" method="POST">{% csrf_token %}
+
+    <div class="input-group mb-3">
+        <span class="input-group-text" id="basic-addon1">Nome da Empresa</span>
+        <input type="text" class="form-control" placeholder="Digite nome da empresa" aria-label="Username"
+            aria-describedby="basic-addon1" name="company">
+    </div>
+
+    <div class="input-group mb-3">
+        <span class="input-group-text" id="basic-addon1">Função</span>
+        <input type="text" class="form-control" placeholder="Digite a função" aria-label="Username"
+            aria-describedby="basic-addon1" name="occupation">
+    </div>
+
+    <div class="input-group mb-3">
+        <span class="input-group-text"> Breve resumo</span>
+        <textarea class="form-control" rows="5" aria-label="With textarea" style="resize: none;" name="briefsummary"
+            placeholder="Digite um breve resumo geral"></textarea>
+    </div>
+
+    <div class="input-group mb-3">
+        <span class="input-group-text">Atividades</span>
+        <textarea class="form-control" rows="5" aria-label="With textarea" style="resize: none;" name="activities"
+            placeholder="Digite as atividades realizadas"></textarea>
+    </div>
+
+    <div class="input-group mb-3">
+        <span class="input-group-text" id="basic-addon1">Tags</span>
+        <input type="text" class="form-control" placeholder="Digite as tags separadas por espaço. Ex.: tagA tagB"
+            aria-label="Username" aria-describedby="basic-addon1" name="tags">
+    </div>
+    <div style="margin-bottom: 0.5rem;">
+        <div class="input-group" style="width: 18rem; margin-bottom: 1rem;">
+            <span class="input-group-text">Data Entrada</span>
+            <input type="date" class="form-control" name="start_date">
+        </div>
+
+        <div class="input-group" style="width: 18rem;">
+            <span class="input-group-text">Data Saída</span>
+            <input type="date" class="form-control" name="departure_date">
+        </div>
+    </div>
+
+
+    <div>
+        <button type="submit" class="btn btn-primary" style="width: 100px;">Salvar</button>
+        <a href="/">
+            <button type="button" class="btn btn-secondary" style="width: 100px;">Cancelar</button>
+        </a>
+    </div>
+
+</form>

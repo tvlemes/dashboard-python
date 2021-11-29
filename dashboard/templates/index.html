@@ -1,0 +1,65 @@
+{% extends "models_templates/page.html" %}
+{% load static %}
+
+{% block content %}
+    <!-- Favorites -->
+    <div class="content">
+        <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" />
+        <div id="main-content" class="file_manager">
+            <div class="container">
+                <div class="title">
+                    <p class="title-favorites">Favoritos</p>
+                    <div id="content">
+                        <div class="row">
+                            {% for dt in dts %}
+                            {% if dt.favorites == True %}
+                            <div class="col-lg-3 col-md-4 col-sm-12">
+                                <div class="card">
+                                    <div class="file">
+                                        <a href="{{ dt.url_name }}" target="_blank">
+                                            <!-- Image    -->
+                                            <div class="image">
+                                                <img src="{{ dt.url_image }}" alt="img" height="80rem">
+                                            </div>
+                                            <!-- Description -->
+                                            <div class="file-name">
+                                                <small>
+                                                    {{ dt.name }}
+                                                </small>
+                                                <!-- <small class="date text-muted">
+                                                Tags: 
+                                                    {{ dt.tags }}
+                                            </small> -->
+                                            </div>
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- End card -->
+                            {% endif %}
+                            {% endfor %}
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Development -->
+    <div>
+        <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" />
+        <div id="main-content" class="file_manager">
+            <div class="container">
+                <div class="title">
+                    <p class="title-favorites">Desenvolvimento</p>
+                    <div id="content">
+                        <div class="row">
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+{% endblock %}

@@ -1,0 +1,65 @@
+<form action="/dashboard/experiences/add" method="POST">{% csrf_token %}
+
+    <div class="input-group mb-3">
+        <span class="input-group-text" id="basic-addon1">Nome do curso</span>
+        <input type="text" class="form-control" placeholder="Digite nome do curso" aria-label="Username"
+            aria-describedby="basic-addon1" name="name">
+    </div>
+
+    <div class="input-group mb-3">
+        <span class="input-group-text" id="basic-addon1">Instituição</span>
+        <input type="text" class="form-control" placeholder="Digite o nome da instituição" aria-label="Username"
+            aria-describedby="basic-addon1" name="institution">
+    </div>
+
+    <div class="input-group mb-3">
+        <span class="input-group-text" id="basic-addon1">Carga horária</span>
+        <input type="text" class="form-control" placeholder="Digite a carga horária" aria-label="Username"
+            aria-describedby="basic-addon1" name="Workload">
+    </div>
+
+    <div class="input-group mb-3">
+        <span class="input-group-text"> Breve resumo</span>
+        <textarea class="form-control" rows="5" aria-label="With textarea" style="resize: none;" name="briefsummary"
+            placeholder="Digite um breve resumo geral"></textarea>
+    </div>
+
+    <div class="input-group mb-3">
+        <span class="input-group-text">Conteúdo</span>
+        <textarea class="form-control" rows="5" aria-label="With textarea" style="resize: none;" name="content"
+            placeholder="Digite as atividades realizadas"></textarea>
+    </div>
+
+    
+    <div style="margin-bottom: 0.5rem;">
+        <div class="input-group" style="width: 18rem; margin-bottom: 1rem;">
+            <span class="input-group-text">Data Início</span>
+            <input type="date" class="form-control" name="start_date">
+        </div>
+        
+        <div class="input-group" style="width: 18rem;">
+            <span class="input-group-text">Data Término</span>
+            <input type="date" class="form-control" name="departure_date">
+        </div>
+    </div>
+    
+    <div class="input-group mb-3">
+        <span class="input-group-text" id="basic-addon1">URL imagem</span>
+        <input type="text" class="form-control" placeholder="Digite o endereço da imagem. Ex.: http://www.exempla.com"
+            aria-label="Username" aria-describedby="basic-addon1" name="url_image">
+    </div>
+    
+    <div class="input-group mb-3">
+        <span class="input-group-text" id="basic-addon1">Tags</span>
+        <input type="text" class="form-control" placeholder="Digite as tags separadas por espaço. Ex.: tagA tagB"
+            aria-label="Username" aria-describedby="basic-addon1" name="tags">
+    </div>
+    
+    <div>
+        <button type="submit" class="btn btn-primary" style="width: 100px;">Salvar</button>
+        <a href="/">
+            <button type="button" class="btn btn-secondary" style="width: 100px;">Cancelar</button>
+        </a>
+    </div>
+
+</form>

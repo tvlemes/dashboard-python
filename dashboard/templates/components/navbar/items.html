@@ -1,0 +1,20 @@
+{% load static %}
+<li class="nav-item">
+    <a class="nav-link" style="color: black;" href="/"><img src="{% static 'icons/home.svg' %}" width="25rem"
+            style="margin-right: 20px;" alt="home"> Home</a>
+</li>
+
+<li class="nav-item dropdown">
+    <a class="nav-link dropdown-toggle" href="#" id="offcanvasNavbarDropdown" role="button" data-bs-toggle="dropdown"
+        aria-expanded="false" style="color: black;">
+        <img src="{% static 'icons/experience.svg' %}" width="25rem" style="margin-right: 20px;" alt="courses">
+        Cadastrar
+    </a>
+
+    <!-- Dropdown -->
+    <ul class="dropdown-menu" aria-labelledby="offcanvasNavbarDropdown" style="border: none;">
+        <li><a class="dropdown-item" href="/dashboard/experiences/"> Experiências Profissionais</a></li>
+        <li><a class="dropdown-item" href="/dashboard/courses/"> Cursos</a></li>
+        <li><a class="dropdown-item" href="/dashboard/favorites/"> Links</a></li>
+    </ul>
+</li>
