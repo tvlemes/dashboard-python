@@ -1,0 +1,96 @@
+<div class="container">
+    <form action="/dashboard/tutorials/markdown" method="POST">{% csrf_token %}
+        <div class="row align-items-center">
+
+
+            <div class="input-group mb-3">
+                <span class="input-group-text" id="basic-addon1">Nome do título</span>
+                <input type="text" class="form-control" placeholder="Digite o título" aria-label="Username"
+                    aria-describedby="basic-addon1" name="name">
+            </div>
+
+            <div class="input-group mb-3">
+                <select class="form-select" aria-label="Default select example" name="technology">
+                    <option selected>Selecione o tipo</option>
+                    {% for dt in tec %}
+                    <option value="{{ dt.name }}">{{ dt.name }}</option>
+                    {% endfor %}
+                </select>
+            </div>
+
+            <div class="input-group mb-3">
+                <span class="input-group-text">Descrição</span>
+                <textarea class="form-control" rows="5" aria-label="With textarea" style="resize: none;"
+                    name="description" placeholder="Digite descrição do tutorial"></textarea>
+            </div>
+
+
+            <div class="input-group mb-3">
+                <span class="input-group-text" id="basic-addon1">Tags</span>
+                <input type="text" class="form-control" placeholder="Digite as tags" aria-label="Username"
+                    aria-describedby="basic-addon1" name="tags">
+            </div>
+
+            <div class="row align-items-center">
+                <!-- Code -->
+                <div class="col-lg-6 mb-6 mb-lg-0">
+                    <div class="mx-auto preview">
+                        <div class="mb-3">
+                            <textarea style="resize: none; border-radius: 1%;" class="form-control" rows="19"
+                                name='text' id="textMarkdown">{{ textSimple }}</textarea>
+
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Preview -->
+                <div class="col-lg-6 mb-6 mb-lg-0">
+                    <div class="mx-auto preview" id="view"
+                        style="background-color: rgb(241, 241, 241); border-radius: 1%;">
+                        <a class="btn btn-primary" id="prev" style="margin-left: 80%; margin-top: 1rem;">Preview</a>
+                        <div id="previewMarkdonw" style="padding: 1rem; overflow-y:scroll; height: 90%;">
+                            {{ textMarkdown | safe }}
+                        </div>
+                    </div>
+                </div>
+
+                <div style="margin-top: 1rem;">
+                    <button type="submit" class="btn btn-primary" style="width: 100px;">Salvar</button>
+                    <a href="/">
+                        <button type="button" class="btn btn-secondary" style="width: 100px;">Cancelar</button>
+                    </a>
+                </div>
+
+            </div>
+    </form>
+
+    <div style="margin-bottom: 3rem; margin-top: 2rem;">
+        <p><b>Referencias para tags:</b></p>
+        <p><a href="https://docs.pipz.com/central-de-ajuda/learning-center/guia-basico-de-markdown#open"
+                target="_blank">docs.pipz</a></p>
+        <p><a href="https://www.markdownguide.org/basic-syntax/" target="_blank">markdownguide</a></p>
+    </div>
+</div>
+
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+<script>
+    $(document).ready(function () {
+        // aqui vai seu código já criado
+
+        $("#prev").on("click", function () { // Quando o elemento do id "click" é clicado...
+            var text = $("#textMarkdown").val(); // Pega o valor do campo produtos_id
+            $.ajax({
+                method: "POST",
+                url: "/dashboard/tutorials/markdown",
+                data: { text: text }, // Dados a serem enviados
+                success: function (data) {
+                    $('#previewMarkdonw').text('')
+                    $("#previewMarkdonw").prepend(data.textMarkdown)
+                }
+            })
+            $('#prev').ready()
+            // document.getElementById("previewMarkdonw").innerHTML='<object type="text/html"></object>';
+        });
+    });
+</script>

@@ -4,6 +4,7 @@
             style="margin-right: 20px;" alt="home"> Home</a>
 </li>
 
+<!-- Add -->
 <li class="nav-item dropdown">
     <a class="nav-link dropdown-toggle" href="#" id="offcanvasNavbarDropdown" role="button" data-bs-toggle="dropdown"
         aria-expanded="false" style="color: black;">
@@ -15,6 +16,24 @@
     <ul class="dropdown-menu" aria-labelledby="offcanvasNavbarDropdown" style="border: none;">
         <li><a class="dropdown-item" href="/dashboard/experiences/"> Experiências Profissionais</a></li>
         <li><a class="dropdown-item" href="/dashboard/courses/"> Cursos</a></li>
-        <li><a class="dropdown-item" href="/dashboard/favorites/"> Links</a></li>
+        <li><a class="dropdown-item" href="/dashboard/favorites/"> Link</a></li>
+        <li><a class="dropdown-item" href="/dashboard/technologias/"> Tecnologias</a></li>
+        <li><a class="dropdown-item" href="/dashboard/tutorials/add/"> Tutorial</a></li>
+    </ul>
+</li>
+
+<!-- Tutorial -->
+<li class="nav-item dropdown">
+    <a class="nav-link dropdown-toggle" href="#" id="offcanvasNavbarDropdown" role="button" data-bs-toggle="dropdown"
+        aria-expanded="false" style="color: black;">
+        <img src="{% static 'icons/experience.svg' %}" width="25rem" style="margin-right: 20px;" alt="courses">
+        Tutorials
+    </a>
+
+    <!-- Dropdown -->
+    <ul class="dropdown-menu" aria-labelledby="offcanvasNavbarDropdown" style="border: none;">
+        <li><a class="dropdown-item" href="/dashboard/tutorials/"> Java</a></li>
+        <li><a class="dropdown-item" href="/dashboard/tutorials/"> Python</a></li>
+        <li><a class="dropdown-item" href="/dashboard/tutorials/"> Debian</a></li>
     </ul>
 </li>

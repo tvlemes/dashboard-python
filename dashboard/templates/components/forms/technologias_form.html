@@ -1,0 +1,28 @@
+<form action="/dashboard/technologias/add" method="POST">{% csrf_token %}
+
+    <div class="input-group mb-3">
+        <span class="input-group-text" id="basic-addon1">Nome da tecnologia</span>
+        <input type="text" class="form-control" placeholder="Digite nome do curso" aria-label="Username"
+            aria-describedby="basic-addon1" name="name">
+    </div>
+
+    <div class="input-group mb-3">
+        <span class="input-group-text" id="basic-addon1">Nome do Subtipo da tecnologia</span>
+        <input type="text" class="form-control" placeholder="Digite nome do curso" aria-label="Username"
+            aria-describedby="basic-addon1" name="subtype">
+    </div>
+
+    <div class="input-group mb-3">
+        <span class="input-group-text"> Descrição</span>
+        <textarea class="form-control" rows="5" aria-label="With textarea" style="resize: none;" name="description"
+            placeholder="Digite uma breve descrição"></textarea>
+    </div>
+
+    <div>
+        <button type="submit" class="btn btn-primary" style="width: 100px;">Salvar</button>
+        <a href="/">
+            <button type="button" class="btn btn-secondary" style="width: 100px;">Cancelar</button>
+        </a>
+    </div>
+
+</form>

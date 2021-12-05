@@ -29,7 +29,6 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'avatar',
     'core',
-    
 ]
 
 MIDDLEWARE = [
@@ -155,4 +154,7 @@ DATABASES = {
 }
 URL_ENV_FAVORITES=config('URL_ENV_FAVORITES')
 URL_ENV_EXPERIENCES=config('URL_ENV_EXPERIENCES')
+URL_ENV_COUSERS=config('URL_ENV_COUSERS')
 URL_ENV_HOME=config('URL_ENV_HOME')
+URL_ENV_TECHNOLOGIAS='http://localhost:8080/technologias/' #config('URL_ENV_TECHNOLOGIAS')
+URL_ENV_TUTORIALS='http://localhost:8080/tutorials/' #config('URL_ENV_TECHNOLOGIAS')

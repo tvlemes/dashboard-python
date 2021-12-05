@@ -1,11 +1,10 @@
 from django.shortcuts import render
 import requests
 from dashboard.settings import settings
-import pandas as pd
 
 
 def index(request):
-    url = 'http://localhost:8080/favorites/'
+    url = settings.URL_ENV_FAVORITES
     aux = requests.get(url)
     dts = aux.json()
 

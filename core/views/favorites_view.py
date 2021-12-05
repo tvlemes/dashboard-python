@@ -5,7 +5,7 @@ from dashboard.settings import settings
 def favorites(request):
     return render(request, 'favorites.html')
 
-def add_favorites(request):
+def favorites_add(request):
     dt = {
         'id' : None,
         'name' : request.POST.get('name'),
