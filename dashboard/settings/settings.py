@@ -128,20 +128,6 @@ STATICFILES_DIRS = (
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
-# Capturando as configurações da variável de ambiente
-# FIREBASE_ADMIN_CERT = {
-#     'type': config('TYPE', default='', cast=str),
-#     'project_id': config('PROJECT_ID', default='', cast=str),
-#     'private_key_id': config('PRIVATE_KEY_ID', default='', cast=str),
-#     'private_key': config('PRIVATE_KEY', default='', cast=str).replace('\\n', '\n'),
-#     'client_email': config('CLIENT_EMAIL', default='', cast=str),
-#     'client_id': config('CLIENT_ID', default='', cast=str),
-#     'auth_uri': config('AUTH_URI', default='', cast=str),
-#     'token_uri': config('TOKEN_URI', default='', cast=str),
-#     'auth_provider_x509_cert_url': config('AUTH_PROVIDER_X509_CERT_URL', default='', cast=str),
-#     'client_x509_cert_url': config('CLIENT_X509_CERT_URL', default='', cast=str)
-# }
-
 # Database Postgres Heroku
 DATABASES = {
     'default': {
@@ -154,11 +140,12 @@ DATABASES = {
     }
 }
 
+# Configurations URL's
 URL_ENV_FAVORITES=config('URL_ENV_FAVORITES')
 URL_ENV_EXPERIENCES=config('URL_ENV_EXPERIENCES')
 URL_ENV_COUSERS=config('URL_ENV_COUSERS')
 URL_ENV_HOME=config('URL_ENV_HOME')
-URL_ENV_TECHNOLOGIAS='http://localhost:8080/technologias/' #config('URL_ENV_TECHNOLOGIAS')
-URL_ENV_TUTORIALS='http://localhost:8080/tutorials/' #config('URL_ENV_TECHNOLOGIAS')
+URL_ENV_TECHNOLOGIAS=config('URL_ENV_TECHNOLOGIAS')
+URL_ENV_TUTORIALS=config('URL_ENV_TUTORIALS')
 
 django_heroku.settings(locals())
