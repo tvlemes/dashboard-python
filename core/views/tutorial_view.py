@@ -5,10 +5,13 @@ import requests
 from dashboard.settings import settings
 from django.views.decorators.csrf import csrf_exempt
 import json
+from django.contrib.auth.decorators import login_required
 
+@login_required(login_url='/login_page/')
 def tutorial(request):
     return render(request, 'tutorials_view.html')
 
+@login_required(login_url='/login_page/')
 def tutorial_add(request):
     url = settings.URL_ENV_TECHNOLOGIAS
     tec = requests.get(url)
@@ -18,6 +21,7 @@ def tutorial_add(request):
     }
     return render(request, 'tutorials_add.html', context)
 
+@login_required(login_url='/login_page/')
 @csrf_exempt
 def tutorial_preview(request):
     aux = request.POST.get('text'),
@@ -31,7 +35,8 @@ def tutorial_preview(request):
         json.dumps(context),
         content_type="application/json"
     ) 
-    
+
+@login_required(login_url='/login_page/') 
 def tutorial_record(request):
     dt = {
         'id' : None,

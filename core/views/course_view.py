@@ -1,10 +1,13 @@
 from django.shortcuts import render,redirect
 import requests
 from dashboard.settings import settings
+from django.contrib.auth.decorators import login_required
 
+@login_required(login_url='/login_page/')
 def courses(request):
     return render(request, 'courses.html')
 
+@login_required(login_url='/login_page/')
 def courses_add(request):
     dt = {
         'id' : None,

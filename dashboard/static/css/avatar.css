@@ -1,4 +1,5 @@
 #user_avatar{
     width: 3em;
-    border-radius: 25%;
+    height: 3em;
+    border-radius: 50%;
 }

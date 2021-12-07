@@ -18,6 +18,7 @@ def signin(request):
             return redirect('/')
         else:
             messages.error(request, "Usuário ou senha invalido!")
+            return redirect('/login_page/')
     return redirect('/')
 
 # Signout

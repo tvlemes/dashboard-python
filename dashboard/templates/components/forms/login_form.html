@@ -23,6 +23,11 @@
                                         <label for="exampleInputPassword1">Password</label>
                                         <input type="password" class="form-control" id="exampleInputPassword1" name='password'>
                                     </div>
+                                    {% for message in messages %}
+                                        <div align='center' style="margin-top: -3rem; margin-bottom: 2rem;">
+                                            <strong style="color: red;">Erro! {{ message }}</strong>
+                                        </div>
+                                    {% endfor %}
                                     <div>
                                         <button type="submit" class="btn btn-theme">Login</button>
                                         <a type="button" href='/' class="btn btn-outline-danger">Cancelar</a>

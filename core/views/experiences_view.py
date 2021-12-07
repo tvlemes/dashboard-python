@@ -1,10 +1,13 @@
 from django.shortcuts import render,redirect
 import requests
 from dashboard.settings import settings
+from django.contrib.auth.decorators import login_required
 
+@login_required(login_url='/login_page/')
 def experiences(request):
     return render(request, 'experiences.html')
 
+@login_required(login_url='/login_page/')
 def experiences_add(request):
     dt = {
         'id' : None,

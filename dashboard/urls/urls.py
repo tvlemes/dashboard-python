@@ -7,14 +7,19 @@ from core.views import index_view, favorites_view, experiences_view, avatar_view
 urlpatterns = [
     # Admin URL's
     path('admin/', admin.site.urls),
+
+    # Sigin
+    path('login_page/', index_view.login_page),
+    path('logout_page/', index_view.logout_page),
+    path('signin', index_view.sigin_page),
     
     # Index
     path('', index_view.index),
 
     # Avatar
-    path('signin_page/', avatar_view.signin_page),
-    path('signin', avatar_view.signin),
-    path('signout/', avatar_view.signout),
+    # path('signin_page/', avatar_view.signin_page),
+    # path('signin', avatar_view.signin),
+    # path('signout/', avatar_view.signout),
 
     # Favorites
     path('dashboard/favorites/', favorites_view.favorites),

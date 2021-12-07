@@ -19,6 +19,7 @@
     {% block content %}
         <a href="{% url 'avatar_change' %}"></a>
     {% endblock %}
+        {% include 'components/spinner.html' %}
 
     <!-- Include Footer -->
     {% include "models_templates/footer.html" %}
@@ -28,5 +29,10 @@
 <!-- JS -->
 <script src="{% static 'js/bootstrap.min.js' %}"></script>
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
-
+<script>
+    $(".spinner-loading").click(function() {
+        $('#loading').css("display","block");
+    });
+</script>
+</html>
 </html>

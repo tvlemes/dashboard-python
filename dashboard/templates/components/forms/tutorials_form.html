@@ -1,5 +1,5 @@
 <div class="container">
-    <form action="/dashboard/tutorials/markdown" method="POST">{% csrf_token %}
+    <form action="/dashboard/tutorials/record" method="POST">{% csrf_token %}
         <div class="row align-items-center">
 
 
@@ -47,7 +47,7 @@
                 <div class="col-lg-6 mb-6 mb-lg-0">
                     <div class="mx-auto preview" id="view"
                         style="background-color: rgb(241, 241, 241); border-radius: 1%;">
-                        <a class="btn btn-primary" id="prev" style="margin-left: 80%; margin-top: 1rem;">Preview</a>
+                        <a class="btn btn-primary" id="prev" style="margin-left: 70%; margin-top: 1rem;">Preview</a>
                         <div id="previewMarkdonw" style="padding: 1rem; overflow-y:scroll; height: 90%;">
                             {{ textMarkdown | safe }}
                         </div>
