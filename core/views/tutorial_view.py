@@ -5,7 +5,6 @@ import requests
 from requests.api import patch
 from dashboard.settings import settings
 from django.views.decorators.csrf import csrf_exempt
-import json
 from django.contrib.auth.decorators import login_required
 
 @login_required(login_url='/login_page/')
