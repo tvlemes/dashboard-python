@@ -16,7 +16,6 @@
                             </thead>
                             <tbody class="text-center">
                                 {% for dt in dts %}
-                                    <!-- {% if dt.technology == tec %} -->
                                 <tr>
                                     <td>
                                         <a href="/dashboard/tutorials/{{ dt.id }}/"><span>{{ dt.name }}</span></a>
@@ -26,7 +25,6 @@
                                         <span>{{ dt.technology  }}</span>
                                     </td>
                                 </tr>
-                                <!-- {% endif %} -->
                             {% endfor %}
                             </tbody>
                         </table>
