@@ -6,12 +6,12 @@
     <div>
       <!-- Icon menu -->
       <button class="navbar-toggler" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasNavbar"
-        aria-controls="offcanvasNavbar" title="Menu">
-        <span class="navbar-toggler-icon"></span>
+          aria-controls="offcanvasNavbar" title="Menu" style="border-color: transparent;">
+          <span class="navbar-toggler" style="border-color: transparent;"><img src="{% static 'icons/menu.svg' %}" alt="menu" style="border-color: transparent; float: left;"></span>
       </button>
       <!-- Text navbar -->
       <a class="navbar-brand spinner-loading" href="/" style="color: white;">Dashboard</a>
-    </div>
+  </div>
 
     <!-- Avatar -->
     {% include 'components/avatar/avatar.html' %}

@@ -38,9 +38,10 @@ urlpatterns = [
     path('dashboard/technologias/add', technology_view.technology_add),
 
     # Tutorials
-    path('dashboard/tutorials/', tutorial_view.tutorial),
-    path('dashboard/tutorials/add/', tutorial_view.tutorial_add),
+    path('dashboard/tutorials/tec/<tec>/', tutorial_view.tutorial),
+    path('dashboard/tutorials/<id>/', tutorial_view.tutorial_view),
     path('dashboard/tutorials/markdown', tutorial_view.tutorial_preview),
+    path('dashboard/tutorials/add/', tutorial_view.tutorial_add),
     path('dashboard/tutorials/record', tutorial_view.tutorial_record),
 
 ] + static(settings.STATIC_URL, document_root=settings.STATIC_ROOT) + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)

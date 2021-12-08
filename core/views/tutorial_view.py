@@ -2,14 +2,30 @@ from django.http import request
 from django.shortcuts import render, HttpResponse
 import markdown
 import requests
+from requests.api import patch
 from dashboard.settings import settings
 from django.views.decorators.csrf import csrf_exempt
 import json
 from django.contrib.auth.decorators import login_required
 
 @login_required(login_url='/login_page/')
-def tutorial(request):
-    return render(request, 'tutorials_view.html')
+def tutorial(request, tec):
+    tutorials = requests.get(settings.URL_ENV_TUTORIALS)
+    aux = tutorials.json()
+    context = {
+        'dts': aux,
+        'tec': tec
+    }
+    return render(request, 'tutorials_view.html', context)
+
+@login_required(login_url='/login_page/')
+def tutorial_view(request, id):
+    tutorials = requests.get(settings.URL_ENV_TUTORIALS + id + '/')
+    aux = tutorials.json()
+    context = {
+            'dts': aux
+        }
+    return render(request, 'tutorials_view_id.html', context)
 
 @login_required(login_url='/login_page/')
 def tutorial_add(request):
