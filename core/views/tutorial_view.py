@@ -9,10 +9,11 @@ from django.contrib.auth.decorators import login_required
 
 @login_required(login_url='/login_page/')
 def tutorial(request, tec):
-    tutorials = requests.get(settings.URL_ENV_TUTORIALS).json()
-    # aux = tutorials.json()
+    url = settings.URL_ENV_TUTORIALS
+    aux = requests.get(url)
+    dts = aux.json()
     context = {
-        'dts': tutorials,
+        'dts': dts,
         'tec': tec
     }
     return render(request, 'tutorials_view.html', context)
